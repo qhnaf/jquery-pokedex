@@ -1,0 +1,404 @@
+html {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    text-align: center;
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+/*  */
+/* Gaya untuk popup box */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+}
+
+/* Gaya untuk konten pop-up */
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 8px;
+    font-size: large;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    overflow: hidden;
+    border-bottom: solid 1px #333;
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    display: block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+.pokeball {
+    width: 37px;
+    height: 37px;
+    margin-top: 4px;
+    transition: transform 0.3s ease; /* Menambahkan transisi untuk menghaluskan perubahan */
+}
+
+.pokeball:hover {
+    animation: spin 0.4s linear infinite; /* Menerapkan animasi spin ketika dihover */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Awal animasi */
+    }
+    100% {
+        transform: rotate(360deg); /* Akhir animasi, satu putaran penuh */
+    }
+}
+
+.fa-github-alt {
+    font-size: 18px;
+    margin-right: 5px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.fa-bars {
+    font-size: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.box-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.image-card {
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.image-card:hover {
+    border: 2px solid #464545;
+}
+
+.image-card a {
+    text-decoration: none;
+    color: #333;
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-text {
+    margin-top: 10px;
+}
+
+.card-text p {
+    font-size: 14px;
+}
+
+/* *MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Konten modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+/* Tombol penutup modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Gaya konten modal */
+#modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#modal-content h2 {
+    margin-top: 10px;
+    margin-left: 5px;
+    color: #333;
+}
+
+/* Pagination */
+#pagination-container {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#pagination li {
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+#pagination li:hover {
+    background-color: #ddd;
+}
+
+#pagination .active {
+    background-color: #51e656;
+    color: white;
+}
+
+#pagination .ellipsis {
+    margin-right: 5px;
+    cursor: default;
+}
+
+/* ================ */
+.cat-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    /* Adjust the height as needed */
+}
+
+.cat-list img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Ensures the image fits within the container */
+}
+
+#refreshButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    /* Adjust as needed */
+    padding: 10px 20px;
+    background-color: #69d66c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#refreshButton:hover {
+    background-color: #3b863e;
+}
+
+#saveButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #69d66c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#saveButton:hover {
+    background-color: #3b863e;
+}
+
+/* for List */
+.modal-sidebar {
+    display: none;
+    /* Modal defaultnya disembunyikan */
+    position: fixed;
+    /* Membuat modal berada pada posisi tetap di layar */
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    padding-top: 0px;
+    z-index: 1;
+}
+
+.modal-sidebar-content {
+    margin-left: 15px;
+}
+
+.list-side {
+    margin-left: 20px;
+    font-size: larger;
+}
+
+.list-poke {
+    list-style: none;
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: solid 1px black;
+}
+
+.list-poke:hover {
+    background-color: #f0f0f0;
+    /* Ubah warna latar belakang saat dihover */
+    color: blue;
+    /* Ubah warna teks saat dihover */
+}
+
+.close-side {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 35px;
+    margin-left: 50px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.pala-side {
+    display: flex;
+    align-items: center;
+    /* Pusatkan secara vertikal */
+    justify-content: left;
+    /* Pisahkan elemen secara horizontal */
+}
+
+/* Search Bar */
+.search-bar {
+    padding: 8px;
+    width: 30vh;
+    margin-left: 17px;
+    border: solid 1px grey;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.search-bar::placeholder {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+}
+
+/* Gaya untuk icon peringatan */
+.alert-icon {
+    cursor: pointer;
+    color: #888;
+}
+
+/* Untuk layar dengan lebar maksimum 768px */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+        /* Ubah lebar modal menjadi 80% pada layar kecil */
+    }
+
+    .box-list {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        margin-inline: 20px;
+        /* Mengubah grid pada layar kecil */
+    }
+
+    .modal-sidebar {
+        width: 250px;
+        /* Ubah lebar modal sidebar pada layar kecil */
+    }
+
+    .search-bar {
+        width: 150px;
+        /* Ubah lebar search bar pada layar kecil */
+    }
+}
+
+/* Untuk layar dengan lebar maksimum 480px */
+@media screen and (max-width: 375px) {
+    .modal-content {
+        width: 76%;
+        /* Ubah lebar modal menjadi 90% pada layar sangat kecil */
+    }
+
+    .box-list {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        margin-inline: 20px;
+    }
+
+    .modal-sidebar {
+        width: 250px;
+        /* Ubah lebar modal sidebar pada layar sangat kecil */
+    }
+
+    .search-bar {
+        width: 120px;
+        /* Ubah lebar search bar pada layar sangat kecil */
+    }
+}
